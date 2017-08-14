@@ -78,8 +78,7 @@ const myForm = {
     }
     result.className = '';
     result.innerHTML = '';
-
-
+    
     if (this.validate().isValid) {
       submitButton.disabled = true;
       let getResponse = () => {
