@@ -73,40 +73,40 @@ const myForm = {
   },
 
   submit: function() {
-  for (let input of document.getElementsByTagName('input')) {
-    input.classList.remove('error');
-  }
-  result.className = '';
-  result.innerHTML = '';
-
-
-  if (this.validate().isValid) {
-    submitButton.disabled = true;
-    let getResponse = () => {
-      const resPromise = fetch(document.getElementById('myForm').action);
-      resPromise.then(data => data.json()).then(data => {        
-        if (data.status === 'success') {
-          result.className = 'success';
-          result.innerHTML = 'Success';
-        } else if (data.status === 'error') {
-          result.className = 'error';
-          result.innerHTML = data.reason;
-        } else if (data.status === 'progress') {
-          result.className = 'progress';
-          setTimeout(() => {
-            console.log('Request');
-            getResponse();
-          }, data.timeout);
-        }
-      });    
-    };
-    getResponse();        
-  } else {
-      for (let field of this.validate().errorFields) {
-        document.getElementById(field).className = 'error';
-      }
+    for (let input of document.getElementsByTagName('input')) {
+      input.classList.remove('error');
     }
-  }
+    result.className = '';
+    result.innerHTML = '';
+
+
+    if (this.validate().isValid) {
+      submitButton.disabled = true;
+      let getResponse = () => {
+        const resPromise = fetch(document.getElementById('myForm').action);
+        resPromise.then(data => data.json()).then(data => {        
+          if (data.status === 'success') {
+            result.className = 'success';
+            result.innerHTML = 'Success';
+          } else if (data.status === 'error') {
+            result.className = 'error';
+            result.innerHTML = data.reason;
+          } else if (data.status === 'progress') {
+            result.className = 'progress';
+            setTimeout(() => {
+              console.log('Request');
+              getResponse();
+            }, data.timeout);
+          }
+        });    
+      };
+      getResponse();        
+    } else {
+        for (let field of this.validate().errorFields) {
+          document.getElementById(field).className = 'error';
+        }
+      }
+   }
 }
 
 const handleForm = (e) => {
