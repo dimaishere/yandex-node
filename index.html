@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Yandex Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form id="myForm" action="success.json">
+    ФИО:<br>
+    <input type="text" name="fio" id="fio">
+    <br>
+    Email:<br>
+    <input type="email" name="email" id="email">
+    <br>
+    Телефон:<br>
+    <input type="tel" name="phone" id="phone">
+    <br><br>
+    <!-- <input type="submit" value="Submit" id="submitButton"> -->
+    <button id="submitButton" type="submit">Submit</button>
+    <br><br>
+    <button type="button" onclick="myForm.setData(sampleData)">Load Sample Data</button>
+  </form>
+  <br>
+  <div id="resultContainer"></div>
+  <script src="index.js"></script>
+</body>
+</html>
