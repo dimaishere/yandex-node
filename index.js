@@ -1,7 +1,7 @@
 const sampleData = {
-"fio": "Ivanov Ivan Ivanovich",
-"email": "ivanov@yandex.ru",
-"phone": "+7(111)111-11-11"
+  "fio": "Ivanov Ivan Ivanovich",
+  "email": "ivanov@yandex.ru",
+  "phone": "+7(111)111-11-11"
 };
 const form = document.getElementById("myForm");
 const submitButton = document.getElementById("submitButton");
